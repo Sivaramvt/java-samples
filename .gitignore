@@ -1,0 +1,13 @@
+# Remove git files
+.git
+
+# Remove IDE related
+.idea
+.editorconfig
+
+# Remove MAC related
+.DS_Store
+
+# Remove target directory
+target/
+
