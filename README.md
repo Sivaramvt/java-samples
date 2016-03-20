@@ -1,4 +1,4 @@
 # java-samples
 
-Core Java experiments.
+Core Java experiments, best practices and learnings.
 Please read the above phrase again.
