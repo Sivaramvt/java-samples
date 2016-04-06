@@ -1,4 +1,4 @@
-package com.computepatterns.java8.lambda;
+package com.computepatterns.java8.lambda.obe;
 
 /**
  * This example uses lambda to create a new thread
