@@ -16,12 +16,12 @@ public class SelectionSort {
     void sort(int[] elements) {
 
         // Complexity - Loop 1
-        for (int i = 0; i < elements.length; i++) {
+        for (int i = 0; i < elements.length - 1; i++) {
 
             // Complexity - Loop 2.
             // Finding minimum in the unsorted portion.
             int minValueIndex = i;
-            for (int j = i; j < elements.length; j++) {
+            for (int j = i + 1; j < elements.length; j++) {
                 if(elements[j] < elements[minValueIndex]){
                     minValueIndex = j;
                 }
