@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * Selection sort - Minimum data element from the unsorted array has been selected and swapped with the first element of
  * the unsorted array. Time complexity - O(n^2) as it involves 2 loop.
+ *
+ * @see <a href="http://quiz.geeksforgeeks.org/selection-sort/">Geek for Geeks</a>
  */
 public class SelectionSort {
     /**
