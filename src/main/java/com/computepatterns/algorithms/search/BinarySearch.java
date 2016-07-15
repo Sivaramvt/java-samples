@@ -1,4 +1,4 @@
-package com.computepatterns.datastructures.search;
+package com.computepatterns.algorithms.search;
 
 import java.util.Arrays;
 
