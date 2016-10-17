@@ -1,4 +1,4 @@
-package com.computepatterns.algorithms.graph;
+package com.computepatterns.algorithms.graph.dijikstra;
 
 import java.util.ArrayList;
 import java.util.Collections;

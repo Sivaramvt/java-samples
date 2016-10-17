@@ -1,4 +1,4 @@
-package com.computepatterns.algorithms.graph;
+package com.computepatterns.algorithms.graph.dijikstra;
 
 import com.computepatterns.algorithms.graph.model.Edge;
 import com.computepatterns.algorithms.graph.model.Graph;
