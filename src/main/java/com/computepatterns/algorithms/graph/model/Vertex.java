@@ -6,6 +6,24 @@ package com.computepatterns.algorithms.graph.model;
 public class Vertex {
     final private String id;
     final private String name;
+    private int value;
+    private boolean isVisited = false;
+
+    public boolean isVisited() {
+        return isVisited;
+    }
+
+    public void setVisited(boolean visited) {
+        isVisited = visited;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
 
     public Vertex(String id, String name) {
         this.id = id;
