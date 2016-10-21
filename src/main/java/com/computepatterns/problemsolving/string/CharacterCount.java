@@ -1,4 +1,4 @@
-package com.computepatterns.algorithms.string;
+package com.computepatterns.problemsolving.string;
 
 import org.apache.commons.collections4.Bag;
 import org.apache.commons.collections4.bag.HashBag;

@@ -1,4 +1,4 @@
-package com.computepatterns.algorithms.string;
+package com.computepatterns.problemsolving.string;
 
 import java.util.HashMap;
 import java.util.Map;
