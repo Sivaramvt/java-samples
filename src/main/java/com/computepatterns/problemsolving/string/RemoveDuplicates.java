@@ -6,6 +6,8 @@ import java.util.Set;
 /**
  * Remove duplicates from the given String.
  * Leverage JDK set. Set doesn't allow duplicates.
+ *
+ * @See <a href="http://www.computepatterns.com/problem-solving/string/removing-duplicate-characters-from-the-given-string/">Removing duplicate character from string Java.</a>
  */
 public class RemoveDuplicates {
 
