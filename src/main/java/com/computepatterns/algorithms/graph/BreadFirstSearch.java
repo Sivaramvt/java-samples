@@ -1,8 +1,8 @@
 package com.computepatterns.algorithms.graph;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 import java.util.stream.Collectors;
 
 import com.computepatterns.algorithms.graph.model.Edge;
@@ -10,14 +10,17 @@ import com.computepatterns.algorithms.graph.model.Graph;
 import com.computepatterns.algorithms.graph.model.Vertex;
 
 /**
- * Depth first search for directed graph.
- * Follows the depth first traversal.
+ * Breadth first search for directed graph.
+ * Follows the breadth first traversal.
  * Similar to implementation in tree but graph may have cycles.
- * Stack or recursion can be used. Here stack is used.
+ * Queue is used.
+ * Implementation similar to {@link DepthFirstSearch Depth First Search } except the stack is replaced with queue.
  *
- * @see <a href="http://www.computepatterns.com/algorithms/graph/depth-first-search-in-graph/">Depth First Search Java</a>
+ * Time complexity - O(V+E)
+ *
+ * @see <a href="http://www.computepatterns.com/algorithms/graph/breadth-first-search-in-graph/">Breadth first search algorithm java</a></a>
  */
-public class DepthFirstSearch {
+public class BreadFirstSearch {
     /**
      * Exception thrown when the search key is not found.
      */
@@ -32,7 +35,7 @@ public class DepthFirstSearch {
      */
     private Graph graph;
 
-    public DepthFirstSearch(Graph graph) {
+    public BreadFirstSearch(Graph graph) {
         this.graph = graph;
     }
 
@@ -45,11 +48,11 @@ public class DepthFirstSearch {
      */
     public Vertex findVertex(Vertex startingNode, int searchValue) throws VertexNotFound{
 
-        Stack<Vertex> stack = new Stack<>();
-        stack.push(startingNode);
+        LinkedList<Vertex> queue = new LinkedList<>();
+        queue.add(startingNode);
 
-        while(!stack.isEmpty()){
-           Vertex currentNode = stack.pop();
+        while(!queue.isEmpty()){
+           Vertex currentNode = queue.poll();
             // Mark the traversed node to deal with cycles.
             currentNode.setVisited(true);
             System.out.println(currentNode.getName());
@@ -60,7 +63,7 @@ public class DepthFirstSearch {
 
            for(Vertex vertex :findNeighbors(currentNode)){
                if(!vertex.isVisited())
-               stack.push(vertex);
+               queue.add(vertex);
            }
         }
         throw new VertexNotFound("Vertex with search key is not found.");
@@ -104,7 +107,7 @@ public class DepthFirstSearch {
         */
 
 
-        //Input graph - http://d1gjlxt8vb0knt.cloudfront.net//wp-content/uploads/DFS.jpg
+        //Input graph - http://d1gjlxt8vb0knt.cloudfront.net//wp-content/uploads/BFS.jpg
         // Above pic with added edge from vertex 3 - vertex 4 (new one).
 
         List<Vertex> vertices = new ArrayList<>();
@@ -142,7 +145,7 @@ public class DepthFirstSearch {
 
         Graph graph = new Graph(vertices, edges);
         try {
-            Vertex vertex = new DepthFirstSearch(graph).findVertex(v2, 1);
+            Vertex vertex = new BreadFirstSearch(graph).findVertex(v2, 1);
             System.out.printf("Search key found in vertex - %s", vertex.getId());
 
         } catch (VertexNotFound vertexNotFound) {
