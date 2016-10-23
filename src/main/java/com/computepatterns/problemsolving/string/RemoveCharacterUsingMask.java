@@ -34,7 +34,6 @@ public class RemoveCharacterUsingMask {
         return String.valueOf(output);
     }
 
-
     public static void main(String[] args) {
         System.out.printf("Output - %s", new RemoveCharacterUsingMask().removeCharacters("Hello my World!!!", "my!!!"));
     }
