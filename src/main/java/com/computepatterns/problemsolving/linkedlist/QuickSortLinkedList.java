@@ -2,6 +2,8 @@ package com.computepatterns.problemsolving.linkedlist;
 
 /**
  * Quick sort implementation for singly linked list.
+ * Worst case complexity - O(n^2). Worst case is rare.
+ * Preferred over merge sort as this is in-place sorting (requires no additional memory).
  */
 public class QuickSortLinkedList extends AbstractSinglyLinkedList {
 
@@ -12,57 +14,47 @@ public class QuickSortLinkedList extends AbstractSinglyLinkedList {
             return start;
         }
         /* Partition the list */
+        // Result contains start/end of left and right segments and the pivot.
         Node[] result = partition(start, end);
 
-
         /* Recur the left side */
-        Node resultLeft = null;
+        Node resultLeft = null; //Start of left result.
         if(null != result[0]) {
 
             resultLeft = quickSort(result[0], result[1]);
         }
 
         /* Recur the right side */
-        Node resultRight = null;
+        Node resultRight = null; // Start of right result.
         if(null != result[3]){
-           resultRight = quickSort(result[3], result[4]);
+            resultRight = quickSort(result[3], result[4]);
         }
 
+        /* Connect the pivot to the start of right segmen */
+        if(resultRight !=null) {
+            result[2].setNext(resultRight);
+        }
 
-        if(resultLeft != null)
-        resultLeft.setNext(result[2]);
-        if(resultRight !=null)
-        result[2].setNext(resultRight);
-
-
-        if(resultLeft == null){
+        /* Return start of the list */
+        if(null == resultLeft){
+            // If left segment has nothing, return pivot.
             return result[2];
         }else{
+            // Else return the start of left.
             return  resultLeft;
         }
-
-
     }
 
-    /*private Node partition(Node start, Node end) {
-        /* Deal with list of size 1 or 2
-        if(null == start || start == end || start.getNext() == end){
-            return start;
-        }
-
-        int pivotValue = end.getValue();
-        Node pivot = start;
-        Node current = start;
-        while(null != current){
-            if(current.getValue() <= pivotValue){
-                swap(current, pivot);
-                pivot = pivot.getNext();
-            }
-            current = current.getNext();
-        }
-        return pivot;
-    }*/
-
+    /**
+     * Partitioning.
+     * <p>
+     *     Details - Choose the last node as pivot.
+     *     Traverse and move the nodes with bigger value than pivot to the right of pivot.
+     * </p>
+     * @param start
+     * @param end
+     * @return Array of nodes[Start of left, end of left, pivot, start of right, end of right]
+     */
     private Node[] partition (Node start, Node end){
         /* Choose a pivot */
         // We are not moving pivot but the other nodes.
@@ -99,7 +91,6 @@ public class QuickSortLinkedList extends AbstractSinglyLinkedList {
                 }
                 previous = current;
             }
-
             current = next;
         }
 
@@ -112,7 +103,6 @@ public class QuickSortLinkedList extends AbstractSinglyLinkedList {
         result[4] = tail;
 
         return result;
-
     }
 
     private void moveNodeToEnd(Node current, Node previous, Node tail) {
@@ -122,21 +112,4 @@ public class QuickSortLinkedList extends AbstractSinglyLinkedList {
         current.setNext(null);
         tail.setNext(current);
     }
-
-    private void swap(Node current, Node pivot) {
-        int temp = current.getValue();
-        current.setValue(pivot.getValue());
-        pivot.setValue(temp);
-    }
-
-    private Node findPreviousBeforeEnd(Node start, Node end){
-        Node current = start;
-        Node previous = start;
-        while(null != current && current != end){
-            previous = current;
-            current = current.getNext();
-        }
-        return previous;
-    }
-
 }
