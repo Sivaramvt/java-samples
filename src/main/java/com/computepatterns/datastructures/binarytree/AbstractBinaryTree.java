@@ -35,4 +35,20 @@ public abstract class AbstractBinaryTree {
             return right;
         }
     }
+
+    /**
+     * Find the height of the binary tree given the root node.
+     * @param root
+     * @return Height of the longest path.
+     */
+    protected int computeHeight(Node root){
+        if(null == root){
+            return 0;
+        }
+
+        int leftHeight = computeHeight(root.getLeft());
+        int rightHeight = computeHeight(root.getRight());
+
+        return leftHeight > rightHeight ? leftHeight + 1 : rightHeight + 1;
+    }
 }
