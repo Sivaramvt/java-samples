@@ -14,22 +14,22 @@ public class BSTTest extends AbstractBinaryTree{
 
         /* Test 1 - Positive case */
         // Visual - http://geeksforgeeks.org/wp-content/uploads/2009/11/BST.gif
-        BSTSearch.Node node1 = new BSTSearch.Node(1, null, null);
-        BSTSearch.Node node3 = new BSTSearch.Node(3, null, null);
-        BSTSearch.Node node5 = new BSTSearch.Node(5, null, null);
-        BSTSearch.Node node2 = new BSTSearch.Node(2, node1, node3);
-        BSTSearch.Node node4 = new BSTSearch.Node(4, node2, node5);
+        BSTOperations.Node node1 = new BSTOperations.Node(1, null, null);
+        BSTOperations.Node node3 = new BSTOperations.Node(3, null, null);
+        BSTOperations.Node node5 = new BSTOperations.Node(5, null, null);
+        BSTOperations.Node node2 = new BSTOperations.Node(2, node1, node3);
+        BSTOperations.Node node4 = new BSTOperations.Node(4, node2, node5);
 
         // Start with a broader range.
         System.out.println(new BSTTest(node4).checkIfBST(node4, Integer.MIN_VALUE, Integer.MAX_VALUE));
 
         /* Test 2 - Negative case */
         // Visual - http://geeksforgeeks.org/wp-content/uploads/2009/11/tree_bst.gif
-        BSTSearch.Node anode1 = new BSTSearch.Node(1, null, null);
-        BSTSearch.Node anode4 = new BSTSearch.Node(4, null, null);
-        BSTSearch.Node anode5 = new BSTSearch.Node(5, null, null);
-        BSTSearch.Node anode2 = new BSTSearch.Node(2, anode1,anode4);
-        BSTSearch.Node anode3 = new BSTSearch.Node(3, anode2, node5);
+        BSTOperations.Node anode1 = new BSTOperations.Node(1, null, null);
+        BSTOperations.Node anode4 = new BSTOperations.Node(4, null, null);
+        BSTOperations.Node anode5 = new BSTOperations.Node(5, null, null);
+        BSTOperations.Node anode2 = new BSTOperations.Node(2, anode1,anode4);
+        BSTOperations.Node anode3 = new BSTOperations.Node(3, anode2, node5);
 
         System.out.println(new BSTTest(anode3).checkIfBST(anode3, Integer.MIN_VALUE, Integer.MAX_VALUE));
 

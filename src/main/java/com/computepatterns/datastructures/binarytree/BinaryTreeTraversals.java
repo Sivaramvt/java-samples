@@ -40,6 +40,10 @@ public class BinaryTreeTraversals extends AbstractBinaryTree{
         System.out.println(System.getProperty("line.separator"));
         System.out.println("LevelOrder traversal");
         tree.traverseLevelOrder(r1);
+
+        System.out.println(System.getProperty("line.separator"));
+        System.out.println("Diameter");
+        System.out.println(tree.computeDiameter(r1));
     }
 
     /**
@@ -56,7 +60,7 @@ public class BinaryTreeTraversals extends AbstractBinaryTree{
         traverseInOrder(node.getLeft());
 
         /* Visit root */
-        System.out.print(node.getValue());
+        System.out.print(node.getValue() + ",");
 
         /* Rcur right */
         traverseInOrder(node.getRight());

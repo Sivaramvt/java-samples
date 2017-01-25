@@ -16,7 +16,20 @@ public abstract class AbstractBinaryTree {
     protected static class Node{
         private int value;
         private Node left;
+
+        public void setValue(int value) {
+            this.value = value;
+        }
+
         private Node right;
+
+        public void setLeft(Node left) {
+            this.left = left;
+        }
+
+        public void setRight(Node right) {
+            this.right = right;
+        }
 
         public Node(int value, Node left, Node right) {
             this.value = value;
@@ -50,5 +63,27 @@ public abstract class AbstractBinaryTree {
         int rightHeight = computeHeight(root.getRight());
 
         return leftHeight > rightHeight ? leftHeight + 1 : rightHeight + 1;
+    }
+
+    /**
+     * Diameter of a tree is the number of nodes on the longest path between 2 leaves in the tree.
+     * @param root
+     * @return
+     */
+    protected int computeDiameter(Node root){
+        if(null == root){
+            return 0;
+        }
+
+        /* Height of left and right trees */
+        int leftHeight = computeHeight(root.getLeft());
+        int rightHeight = computeHeight(root.getRight());
+
+        /* Diamter of left and right trees */
+        int leftDiameter = computeDiameter(root.getLeft());
+        int rightDiameter = computeDiameter(root.getRight());
+
+        /* Diamter of the given node is the max of the sum of heights plus one or the right/left diameter. */
+        return Math.max(leftHeight + rightHeight + 1, Math.max(leftDiameter, rightDiameter));
     }
 }
