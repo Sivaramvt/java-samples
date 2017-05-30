@@ -1,4 +1,4 @@
-package com.computepatterns.problemsolving.linkedlist;
+package com.computepatterns.datastructures.linkedlist;
 
 /**
  * Reverse the singly linked list.

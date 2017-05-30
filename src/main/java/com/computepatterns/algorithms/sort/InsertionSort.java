@@ -6,7 +6,6 @@ import java.util.Arrays;
  * Insertion sort - Like sorting a deck of cards. Pick the card from beginning to end one by one and place it in
  * appropriate place in the sorted deck. Time complexity - O(n^2)
  *
- * @see <a href="http://quiz.geeksforgeeks.org/insertion-sort/"> Insertion sort at Geek for Geeks.</a>
  */
 public class InsertionSort {
 

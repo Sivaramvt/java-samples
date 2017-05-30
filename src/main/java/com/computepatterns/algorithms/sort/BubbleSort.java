@@ -6,7 +6,6 @@ import java.util.Arrays;
  * Simplest form of sorting. Swaps adjacent elements in multiple passes until all the elements are sorted. Time
  * complexity - O(n^2) as it involves 2 loops
  *
- * @see <a href="http://quiz.geeksforgeeks.org/bubble-sort/">Bubble Sort</a>
  */
 public class BubbleSort {
 

@@ -1,4 +1,4 @@
-package com.computepatterns.problemsolving.linkedlist;
+package com.computepatterns.datastructures.linkedlist;
 
 /**
  * Find the sum of 2 numbers represented in 2 linked lists.

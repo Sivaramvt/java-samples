@@ -1,7 +1,7 @@
-package com.computepatterns.problemsolving.linkedlist;
+package com.computepatterns.datastructures.linkedlist;
 
 /**
- * Merged 2 sorted singly linked lists into one. The resultant list is sorted.
+ * Merge 2 sorted singly linked lists into one. The resultant list is sorted.
  * Time complexity - O(n), n being the length of the shortest list.
  */
 public class MergeSortedLinkedList {

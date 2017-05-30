@@ -1,4 +1,4 @@
-package com.computepatterns.problemsolving.linkedlist;
+package com.computepatterns.datastructures.linkedlist;
 
 import static org.junit.Assert.assertEquals;
 

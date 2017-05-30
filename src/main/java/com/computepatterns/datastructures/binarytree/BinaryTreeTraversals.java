@@ -122,7 +122,7 @@ public class BinaryTreeTraversals extends AbstractBinaryTree{
     }
 
     /**
-     * Print the nodes in the given lebel.
+     * Print the nodes in the given level.
      * @param node
      * @param level
      */
