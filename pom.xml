@@ -41,7 +41,12 @@
             <artifactId>guava</artifactId>
             <version>20.0</version>
         </dependency>
-
+        <!-- Apache Kafka -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.11.0.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
