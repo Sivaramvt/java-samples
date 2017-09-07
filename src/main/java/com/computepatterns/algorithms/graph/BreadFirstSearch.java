@@ -77,7 +77,6 @@ public class BreadFirstSearch {
     private List<Vertex> findNeighbors(Vertex currentNode) {
         return graph.getEdges().stream().filter(edge -> edge.getSource().equals(currentNode))
                 .map(edge -> edge.getDestination()).collect(Collectors.toCollection(ArrayList::new));
-
     }
 
     public static void main(String[] args) {

@@ -30,7 +30,7 @@ public class QuickSortLinkedList extends AbstractSinglyLinkedList {
             resultRight = quickSort(result[3], result[4]);
         }
 
-        /* Connect the pivot to the start of right segmen */
+        /* Connect the pivot to the start of right segment */
         if(resultRight !=null) {
             result[2].setNext(resultRight);
         }
